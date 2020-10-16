@@ -1,0 +1,125 @@
+{% extends 'index.html'%}
+{% load static %}
+{% block content %}
+<div class="left">
+
+</div>
+<div class="middle">
+    <div class="container">    
+        <div class="section-items-align-center">
+            <div class="alert-wrap">
+                <div class="profile-frame">
+                    <img class="profile-pic" 
+                    {% if user.profile_pic %}
+                    src="{{ user.profile_pic.url }}"
+                    {% else %}
+                    src="{% static 'img/no-profile-pic-icon-12.png' %}"
+                    {% endif %} 
+                    alt="profile picture">            
+                </div>
+                {% if dm.count > 0 %}
+                <div class="dm-alert">{{dm.count}}</div>
+                {% endif %}
+            </div>
+            <div class="title">JONG WOO CHOI</div>            
+            <div class="sub-title">Web Developer | Python Full Stack</div>
+            <div class="sub-title">Rockville MD USA</div>            
+            <button class="btn contact">CONTACT ME!</button>
+        </div>        
+    </div>
+    {% if user.user_id == logged_user.user_id %}
+    <div class="usermenu">
+        <a href="/dm_check/" class="btn dm-check">Check DM</a>
+        <a href="/logout/" class="btn btn-alert">LOGOUT</a>
+    </div>
+    {% endif %}
+
+    <div class="container">
+        <div class="i-wrap">
+            <i class="fas fa-project-diagram"></i>
+        </div>
+        <div class="content-wrap">
+            <div class="title">PROJECTS</div>    
+            <div class="content">
+                <div class="section section-left">
+                    <span>Login/ Registration</span>
+                    <span>Multiple Image Upload Model</span>
+                    <span>Starbucks Store Locator</span>
+                    <span>Solo Project: Skillmemo</span>
+                </div>
+                <div class="section">
+                    <span><a href="/register/">Front and Backend Validation</a></span>
+                    <span><a href="/multi/multiple_img/">Blog Post Model</a></span>
+                    <span><a href="/map/google/">Google Map API</a></span>
+                    <span><a href="">social media platform</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="i-wrap">
+            <i class="fas fa-code"></i>
+        </div>
+        <div class="content-wrap">
+            <div class="title">SKILL SET</div>    
+            <div class="content">
+                <div class="section section-left">
+                    <span>Languages</span>
+                    <!-- <span>Frameworks</span> -->
+                    <span>Tools</span>
+                </div>
+                <div class="section">
+                    <span>Python, JavaScript, HTML, CSS</span>
+                    <span>Django, Flask, REACT </span>
+                    <span>jQuery, AJAX</span>
+                    <span>Google Map API</span>
+                    <span>MySQL, PostgreSQL, FireBase</span>
+                    <span>AWS, linux/Ubuntu, nginx, gunicorn, </span>
+                    <span>Font Awesome, Material UI, </span>
+                    <span>Adobe Creative Suite</span>
+                    <span>Affinity Designer Suite</span>
+                    <span>Final Cut Pro X, Logic Pro X</span>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+<div class="modal-background">
+    <div class="dm-modal">
+        <div class="dm-title">To: Jong Woo Choi</div>
+        <form action="/dm/" method="POST">
+            {% csrf_token %}
+        <div class="dm-wrapper">
+            <table>
+                <tr>
+                    <td class="dm-left">Name</td>
+                    <td class="dm-right"><input type="text" name="dm_from_name"></td>
+                </tr>
+                <tr>
+                    <td class="dm-left">Email</td>
+                    <td class="dm-right"><input type="text" name="dm_from_email"></td>
+                </tr>
+                <tr>
+                    <td class="dm-left">Message</td>
+                    <td class="dm-right"><textarea class="dm-msg" name="dm_msg" rows="6"></textarea></td>
+                </tr>
+            </table>
+            <input type="hidden" name="dm_to" value="{{user.user_id}}">
+            <div class="dm-send-wrap">
+                <div class="btn dm-cancel">Cancel</div>
+                <button class="btn dm-send">Send</button>
+            </div>
+        </div>
+        </form>
+    </div>
+  </div>
+<div class="right">
+
+</div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'js/dm.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/dm.css' %}">
+{% endblock %}

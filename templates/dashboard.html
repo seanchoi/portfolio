@@ -1,0 +1,49 @@
+{% extends 'index.html'%}
+{% load static %}
+{% block content %}
+<div class="left">
+
+</div>
+<div class="middle">
+<div class="form-container">
+    <div class="container">    
+        <div class="profile-wrap">
+            <div class="welcome">Welcome to <span class="dash-title">{{user.user_id}}</span> Dashboard!</div>
+            <div class="profile-frame">
+                {% if user.profile_pic %}
+                    <img class="profile-pic" src="{{ user.profile_pic.url}}">
+                 {% else %}
+                    <img class="profile-pic" src="{% static 'img/no-profile-pic-icon-12.png' %}">
+                {% endif %}            
+            </div>
+            
+            <div class="user-name">{{user.first_name}} {{user.last_name}}</div>
+            <form action="/{{user.user_id}}/profile_pic/" method="POST" class="profile_form" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="file-btn-wrap">
+                    <label for="uploader" class="image_label"><i class="fas fa-upload"></i>Profile Pic Upload</label>
+                    <span class="delete_img"><a href="/{{user.user_id}}/profile_pic_delete/"><i class="fas fa-trash-alt prof_pic_delete"></i></a></span>
+                </div>
+                <input type="file" name="profile_pic" id="uploader" accept="image/png, .jpeg, .jpg, image/gif">
+                <div class="profile-btn-wrap">
+                    <a href="/logout/" class="btn btn-alert">LOGOUT</a>
+                    <button class="btn btn-alert">UPDATE</button>
+                </div>
+            </form>
+        </div>
+
+</div>   
+<div class="nav-btn-wrap">
+    <div class="btn-nav"><i class="fas fa-arrow-left"></i></div>
+    <a href="/" class="btn-home"><i class="fas fa-home"></i></a>          
+</div> 
+</div>
+
+<div class="right">
+
+</div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'js/login_reg.js' %}"></script>
+
+{% endblock %}

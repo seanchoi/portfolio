@@ -1,0 +1,25 @@
+{% load static %}
+{% if search %}
+    <div class="search_preview_frame">
+    {% for item in search %}
+    <div class="search_result">
+        <div class="search_user-wrap">
+            <div class="search_user_pic_frame">
+                <img class="search_user_pic" 
+                    {% if item.profile_pic %} src="{{item.profile_pic.url}}"
+                    {% else %} src="{% static 'img/profile_frame.png' %}"
+                    {% endif %}                
+                >
+            </div>
+            <a href="/{{item.user_id}}/">
+                <span class="search_preivew_item" >
+                @{{item.user_id}} {% if item.brand_name %}| {{item.brand_name}} {% endif %} {% if item.brand_desc %}| {{item.brand_desc|truncatechars:30}}{% endif %}
+                </span>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+{% else %}
+
+{% endif %}

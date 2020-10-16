@@ -1,0 +1,127 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<div class="left">
+    <div class="detail-wrap">        
+        <div class="detail">
+            <div class="detail-title">&quotLogin/ Reg with Frontend Validation&quot</div>
+            <span class="detail-item"><i class="fas fa-bullseye"></i>Form Validation with Ajax/ Python</span>
+            <span class="detail-item"><i class="fas fa-bullseye"></i>Field Focus On/ Out Validation in aspect of UX</span>
+            <span class="detail-item"><i class="fas fa-bullseye"></i>Restful API</span>
+            <span class="detail-item"><i class="fas fa-bullseye"></i>plus, Extra Backend Validation</span>            
+            <span class="detail-item"><i class="fas fa-bullseye"></i>RegEx Email Format Validation</span> 
+            <span class="detail-item"><i class="fas fa-bullseye"></i>Bcrypt Password Hash/ Salt</span> 
+            <span class="detail-item"><i class="fas fa-bullseye"></i>No Bootstrap</span>
+        </div>
+        <div class="detail-tag">About Project</div>
+    </div>
+</div>
+<div class="middle">
+    <div class="form-container">
+        <div class="container">
+            <form action="/register/" method="POST" id="reg_form" autocomplete="off">
+                {%csrf_token %}
+                <div class="form-wrap">
+                    <div class="form-title-wrap">                                        
+                        <!-- <img src="{% static 'img/logo.png' %}"> -->
+                        <div class="title">Create Account</div>                       
+                    </div>
+                    <table class="form-tbl">
+                        <tr class="tbl-row">
+                            <td class="form-title">First Name</td>
+                            <td class="form-input"><input type="text" name="first_name" id="first_name" required>
+                                <div id="first_name_msg"></div>
+                            </td>                            
+                        </tr>
+                        <tr class="tbl-row">
+                            <td class="form-title">Last Name</td>
+                            <td class="form-input"><input type="text" name="last_name" id="last_name" required>
+                                <div id="last_name_msg"></div>
+                            </td>                            
+                        </tr>
+                        <tr class="tbl-row">
+                            <td class="form-title">Email</td>
+                            <td class="form-input"><input type="text" name="email" id="email" required>
+                                <div id="email_msg"></div>
+                            </td>                            
+                        </tr>
+                        <tr class="tbl-row">
+                            <td class="form-title">User ID</td>
+                            <td class="form-input"><input type="text" name="user_id" id="user_id" required>
+                                <div id="user_id_msg"></div>
+                            </td>                            
+                        </tr>
+                        <tr class="tbl-row">
+                            <td class="form-title">Password</td>
+                            <td class="form-input"><input type="password" name="password" id="password" required>
+                                <div id="password_msg"></div>
+                            </td>                            
+                        </tr>
+                        <tr class="tbl-row">
+                            <td class="form-title">Confirm</td>
+                            <td class="form-input"><input type="password" name="confirm" id="confirm" required></td>                            
+                        </tr>
+                    </table>
+                </div>
+
+                <button class="btn" id="create">CREATE</button>      
+                <div class="errors">
+                    {% for message in messages %}
+                    <div class="error_msg">
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                </div>
+            </form>         
+        </div>
+        
+            <div class="container">
+                <form action="/login/" method="POST" id="login_form" autocomplete="off">
+                    {%csrf_token %}
+                    <div class="form-wrap">
+                        <div class="form-title-wrap">                                        
+                            <div class="title">Login</div>                       
+                        </div>
+                        <table class="form-tbl">
+                            <tr class="tbl-row">
+                                <td class="form-title">User ID</td>
+                                <td class="form-input"><input type="text" name="user_id" id="login_id">
+                                    <div id="login_id_msg"></div>
+                                </td>                            
+                            </tr>
+                            <tr class="tbl-row">
+                                <td class="form-title">Password</td>
+                                <td class="form-input"><input type="password" name="password">                  
+                                </td>                            
+                            </tr>    
+                        </table>
+                    </div>
+                    <button class="btn" id="create">LOGIN</button>      
+                    <!-- <a href="/forgot_pass/">forgot password</a> -->
+                    <div class="errors">
+                        {% for message in messages %}
+                        <div class="error_msg">
+                            {{message}}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </form>
+            </div>
+        
+        <div class="nav-btn-wrap">
+            <div class="btn-nav"><i class="fas fa-arrow-left"></i></div>          
+            <div class="btn-refresh"><i class="fas fa-sync"></i></div>
+            <a href="/" class="btn-home"><i class="fas fa-home"></i></a>   
+        </div> 
+    </div>
+
+</div>
+<div class="right">
+
+</div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'js/login_reg.js' %}"></script>
+
+{% endblock %}

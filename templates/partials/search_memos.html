@@ -1,0 +1,11 @@
+{% if search %}
+    <div class="search_preview_frame">
+    {% for item in search %}
+    <div class="search_result">
+    <a href="/{{item.made_by.user_id}}/{{item.id}}/"><span class="search_preivew_item" >{{item.subject|truncatechars:40}}</span></a>
+    </div>
+    {% endfor %}
+    </div>
+{% else %}
+
+{% endif %}

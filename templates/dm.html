@@ -1,0 +1,49 @@
+{% extends 'index.html'%}
+{% load static %}
+{% block content %}
+<div class="left">
+
+</div>
+<div class="middle">
+<div class="form-container">
+    <div class="container">    
+        {% for dm in dms %}
+        <div class="dm-item-wrap">            
+            <table>
+                <tr>
+                    <td>Date:</td>
+                    <td>{{dm.created_at}}</td>
+                </tr>
+                <tr>
+
+                    <td>Name: </td>
+                    <td>{{dm.dm_from_name}}</td>
+                </tr>
+                <tr>
+                    <td>Email: </td>
+                    <td>{{dm.dm_from_email}}</td>
+                </tr>
+                <tr>
+                    <td>Message: </td>
+                    <td>{{dm.dm_content}}</td>
+                </tr>
+            </table>   
+            <a href="/dm_delete/{{dm.id}}/" class="dm-delete"><i class="fas fa-trash"></i></a>
+        </div>
+        {% endfor %}
+    </div>   
+    <div class="nav-btn-wrap">
+        <div class="btn-nav"><i class="fas fa-arrow-left"></i></div>
+        <a href="/" class="btn-home"><i class="fas fa-home"></i></a>          
+    </div> 
+</div>
+
+<div class="right">
+
+</div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'js/login_reg.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/dm.css' %}"
+
+{% endblock %}

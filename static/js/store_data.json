@@ -1,0 +1,194 @@
+[
+    {
+        "store_name": "Downtown Crown",
+        "address": " 307 Copley Place",
+        "city": "Gaithersburg",
+        "state": "MD",
+        "zipcode": "20878",
+        "phone": "301.216.2498",
+        "coordinates": {
+            "lat": "39.115410",
+            "lon": "-77.206920"
+        },
+        "addressLines": [
+            " 307 Copley Place",
+            "Gaithersburg, MD 20878"
+        ]
+    },
+    {
+        "store_name": "Fallsgrove",
+        "address": "14941 Shady Grove Road C-3-1",
+        "city": "Rockville",
+        "state": "MD",
+        "zipcode": "20850",
+        "phone": "301.315.0096",
+        "coordinates": {
+            "lat": "39.098080",
+            "lon": "-77.192740"
+        },
+        "addressLines": [
+            "14941 Shady Grove Road C-3-1",
+            "Rockville, MD 20850"
+        ]
+    },
+    {
+        "store_name": "First Field Shopping Center",
+        "address": "505 Quince Orchard Road Space 12",
+        "city": "Gaithersburg",
+        "state": "MD",
+        "zipcode": "20878",
+        "phone": "301.987.2250",
+        "coordinates": {
+            "lat": "39.144240",
+            "lon": "-77.219640"
+        },
+        "addressLines": [
+            "505 Quince Orchard Road Space 12",
+            "Gaithersburg, MD 20878"
+        ]
+    },
+    {
+        "store_name": "Flower Hill",
+        "address": "18240 Flower Hill Way",
+        "city": "Gaithersburg",
+        "state": "MD",
+        "zipcode": "20879",
+        "phone": "301.330.5274",
+        "coordinates": {
+            "lat": "39.155170",
+            "lon": "-77.165370"
+        },
+        "addressLines": [
+            "18240 Flower Hill Way",
+            "Gaithersburg, MD 20879"
+        ]
+    },
+    {
+        "store_name": "Mudy Branch",
+        "address": "898 Muddy Branch Rd.",
+        "city": "Gaithersburg",
+        "state": "MD",
+        "zipcode": "20878",
+        "phone": "301.987.8520",
+        "coordinates": {
+            "lat": "39.114600",
+            "lon": "-77.216230"
+        },
+        "addressLines": [
+            "898 Muddy Branch Rd.",
+            "Gaithersburg, MD 20878"
+        ]
+    },
+    {
+        "store_name": "Rockville Town Square",
+        "address": "39 Maryland Avenue Suite B",
+        "city": "Rockville",
+        "state": "MD",
+        "zipcode": "20850",
+        "phone": "301.309.0478",
+        "coordinates": {
+            "lat": "39.085490",
+            "lon": "-77.151220"
+        },
+        "addressLines": [
+            "39 Maryland Avenue Suite B",
+            "Rockville, MD 20850"
+        ]
+    },
+    {
+        "store_name": "Safewat-Rockville #1668",
+        "address": "5510 Norbeck Rd",
+        "city": "Rockville",
+        "state": "MD",
+        "zipcode": "20853",
+        "phone": "301.438.4020",
+        "coordinates": {
+            "lat": "39.094560",
+            "lon": "-77.110100"
+        },
+        "addressLines": [
+            "5510 Norbeck Rd",
+            "Rockville, MD 20853"
+        ]
+    },
+    {
+        "store_name": "Safeway-Rockville #1715",
+        "address": "403 Redland Rd",
+        "city": "Rockville",
+        "state": "MD",
+        "zipcode": "20850",
+        "phone": "301.990.3150",
+        "coordinates": {
+            "lat": "39.113060",
+            "lon": "-77.171670"
+        },
+        "addressLines": [
+            "403 Redland Rd",
+            "Rockville, MD 20850"
+        ]
+    },
+    {
+        "store_name": "Safeway-Rockville #1956",
+        "address": "14939 Shady Grove Rd",
+        "city": "Rockville",
+        "state": "MD",
+        "zipcode": "20850",
+        "phone": "301.944.1584",
+        "coordinates": {
+            "lat": "39.098180",
+            "lon": "-77.192170"
+        },
+        "addressLines": [
+            "14939 Shady Grove Rd",
+            "Rockville, MD 20850"
+        ]
+    },
+    {
+        "store_name": "Target Gaithersburg T-1193",
+        "address": "25 Grand Corner Ave",
+        "city": "Gaithersburg",
+        "state": "MD",
+        "zipcode": "20878",
+        "phone": "301.721.1760",
+        "coordinates": {
+            "lat": "39.119110",
+            "lon": "-77.202340"
+        },
+        "addressLines": [
+            "25 Grand Corner Ave",
+            "Gaithersburg, MD 20878"
+        ]
+    },
+    {
+        "store_name": "Westside at Shady Grove",
+        "address": "8101 Gramercy Blvd",
+        "city": "Rockvilee",
+        "state": "MD",
+        "zipcode": "20855",
+        "phone": "2028975084",
+        "coordinates": {
+            "lat": "39.124460",
+            "lon": "-77.164220"
+        },
+        "addressLines": [
+            "8101 Gramercy Blvd",
+            "Rockvilee, MD 20855"
+        ]
+    },
+    {
+        "store_name": "Wintergreen Plaza",
+        "address": "865 Rockville Pike",
+        "city": "Rockville",
+        "state": "MD",
+        "zipcode": "20852",
+        "phone": "301.294.4070",
+        "coordinates": {
+            "lat": "39.075440",
+            "lon": "-77.137790"
+        },
+        "addressLines": [
+            "865 Rockville Pike",
+            "Rockville, MD 20852"
+        ]
+    }
+]

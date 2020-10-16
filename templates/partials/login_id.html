@@ -1,0 +1,12 @@
+{% if found == True %}
+    <!-- <div class="check_error"><i class="fas fa-times-circle"></i>not available!</div> -->
+{% endif %}
+{% if found == "not found" %}
+    <div class="check_error"><i class="fas fa-times-circle"></i>ID not found</div>
+{% endif %}
+{% if found == "required" %}
+    <div class="check_error"><i class="fas fa-times-circle"></i>required</div>
+{% endif %}
+{% if found == "not exist" %}
+    <div class="check_error"><i class="fas fa-times-circle"></i>should be at least 6 characters</div>
+{% endif %}

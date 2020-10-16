@@ -1,0 +1,94 @@
+/* modal basic set  */
+.dm-modal {
+    position: fixed;
+    width:fit-content;
+    height:fit-content;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    background-color: white;
+    border-radius: 20px;
+    padding:40px;
+    box-shadow: 0px 0px 1000px #000000;
+}
+.modal-background {
+    width:100%;
+    height:100%;
+    position: fixed;
+    top:50%;
+    left:50%;
+    z-index: 15;
+
+}
+.modal-background:before {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    background-color: black;
+    opacity: .8;
+    pointer-events: none;
+}
+.dm-wrapper {
+    width:100%;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    font-size:20px;
+    color: #8c8c8c;
+    font-size:16px;
+}
+
+.dm-to{
+    margin-bottom:10px;
+}
+.dm-from {
+    margin-bottom:5px;
+
+}
+.dm-msg:focus{
+    outline: none;
+    background-color: #e8f8ff;
+}
+.dm-title {
+    font-size:24px;
+    font-weight:bold;
+    color: #60CFFF;
+    margin-bottom:15px;
+}
+.dm-msg {
+    width:100%;
+    resize: none;
+    border:1px solid #dcdcdc;
+    border-radius: 10px;
+    padding:10px;
+    box-sizing: border-box;
+    font-size:16px;
+    margin-left:10px;
+}
+.dm-send {
+    font-size:16px;
+}
+.dm-cancel {
+    background-color: rgb(255, 133, 153);;
+}
+.dm-send-wrap {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+.dm-delete {
+    margin:10px;
+    width:15px;
+    height:15px;
+    padding:5px;
+    background-color: purple;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}

@@ -1,0 +1,15 @@
+{% if found == "not valid" %}
+    <div class="check_error"><i class="fas fa-times-circle"></i>not valid format</div>
+{% endif %}
+{% if found == "duplicate" %}
+    <div class="check_error"><i class="fas fa-times-circle"></i>already registered!</div>
+{% endif %}
+{% if found == False %}
+    <div class="check_success"><i class="fas fa-check"></i>available</div>
+{% endif %}
+{% if found == "required" %}
+<div class="check_error"><i class="fas fa-times-circle"></i>required</div>
+{% endif %}
+{% if found == "nothing" %}
+<!-- <div class="check_error"><i class="fas fa-times-circle"></i>required</div> -->
+{% endif %}

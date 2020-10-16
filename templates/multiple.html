@@ -1,0 +1,114 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<div class="left">
+    <div class="detail-wrap">        
+        <div class="detail">
+            <div class="detail-title">&quotMultiple Image Upload Model&quot</div>
+            <span class="detail-item"><i class="fas fa-bullseye"></i>JavaScript + Python + Django</span>
+            <span class="detail-item"><i class="fas fa-bullseye"></i>Ajax Upload Image Preivew</span>
+            <span class="detail-item"><i class="fas fa-bullseye"></i>Clear Selections Front & Banckend</span>
+            <span class="detail-item"><i class="fas fa-bullseye"></i>JavaScript Image Slider</span>     
+            <span class="detail-item"><i class="fas fa-bullseye"></i>True Frontend UX for Django</span>            
+            <span class="detail-item"><i class="fas fa-bullseye"></i>No Bootstrap</span>                       
+        </div>
+        <div class="detail-tag">About Project</div>
+    </div>
+</div>
+</div>
+<div class="middle">
+
+    <div class="container">
+        <div class="memo-intro">
+            <span class="quote"><i class="fas fa-quote-left"></i></span>Try Your Blog Post With Images <span class="quote"><i class="fas fa-quote-right"></i></span>
+        </div>
+    </div>
+    <div class="container">  
+        <form action="/multi/new_memo/" method="POST" enctype="multipart/form-data">
+            {%csrf_token %}  
+            <input class="blog-subject" type="text" name="subject" placeholder="subject">
+            <textarea class="blog-content" name="content" placeholder="your story..."></textarea>
+            <div class="image_desc"> * up to 4 images</div>
+            <div class="upload_images-btns">        
+                <div type="button" class="upload_images_ajax">
+                select images
+                </div>
+                
+                <input type="hidden" name="next" value="/multi/clear_img/">
+                <div class="clear_images">
+                    clear selection
+                </div>
+
+                <button class="btn post">Post</button>
+
+                <input id="fileupload" type="file" name="files" multiple accept="image/png, .jpeg, .jpg, .gif"
+                    style="display: none;"
+                    data-url="/multi/img_upload/"
+                    data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}' />
+            </div>           
+
+            <div class="image_style-wrap">
+                <div class="upload_img-wrap">
+                {% for img in imgs reversed%}              
+                    <div class="upload_img_circle">
+                        <img class="upload_img" src="{{img.files.url }}">
+                    </div>            
+                {% endfor %}
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div class="nav-btn-wrap">
+        <div class="btn-nav"><i class="fas fa-arrow-left"></i></div>          
+        <div class="btn-refresh"><i class="fas fa-sync"></i></div>
+        <a href="/" class="btn-home"><i class="fas fa-home"></i></a>   
+    </div> 
+
+    {% for memo in memos %}
+    <div class="container memo-container">
+        <div class="memo-title-wrap">
+            <div class="memo-subject">{{memo.subject}}</div> 
+        </div>
+        <div id="slider">
+            <a class="control_next">></a>
+            <a class="control_prev"><</a>
+            <ul class="first_ul">
+            {% if memo.img04 %}
+                <li><img class="slider_img" src="{{ memo.img01.url }}"></li>
+                <li><img class="slider_img" src="{{ memo.img02.url }}"></li>
+                <li><img class="slider_img" src="{{ memo.img03.url }}"></li>
+                <li><img class="slider_img" src="{{ memo.img04.url }}"></li>
+            {% elif memo.img03 %}
+                <li><img class="slider_img" src="{{ memo.img01.url }}"></li>
+                <li><img class="slider_img" src="{{ memo.img02.url }}"></li>
+                <li><img class="slider_img" src="{{ memo.img03.url }}"></li>
+            {% elif memo.img02 %}
+                <li><img class="slider_img" src="{{ memo.img01.url }}"></li>
+                <li><img class="slider_img" src="{{ memo.img02.url }}"></li>
+            {% else %}
+                <li><img class="slide only_one" src="{{ memo.img01.url }}"></li>
+            {% endif %}
+            </ul>  
+        </div>             
+        
+        <pre class="memo-content" wrap="hard">{{memo.content}}</pre>
+        <a href="/multi/memo_delete/{{memo.id}}/" class="memo-delete"><i class="fas fa-trash"></i></a>
+    </div>
+    {% endfor %}
+</div>
+<div class="right">
+
+</div>
+{% endblock %}
+{% block script %}
+<script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js" integrity="sha256-lFA8dPmfmR4AQorTbla7C2W0aborhztLt0IQFLAVBTQ=" crossorigin="anonymous"></script>
+<script src="{% static 'js/jquery.ui.widget.js' %}"></script>
+<script src="{% static 'js/jquery.iframe-transport.js' %}"></script>
+<script src="{% static 'js/jquery.fileupload.js' %}"></script>
+
+<script src="{% static 'js/imageUpload.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/imgupload.css' %}">
+<script src="{% static 'js/login_reg.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="left">
+        
+    </div>
+    <div class="middle">
+        <div class="form_wrapper">
+            <div class="register">
+                <h3>Create Account</h3>
+                <form action="/register/" method="POST" id="reg_form" autocomplete="off">
+                    {%csrf_token %}
+                    <div class="label">
+                      <span><label for="first_name">First Name</label></span> 
+                      <span><label for="last_name">Last Name</label></span> 
+                      <span><label for="email">Email</label></span> 
+                      <span><label for="user_id">ID</label></span> 
+                      <span><label for="password">Password</label></span> 
+                      <span><label for="confirm">Confirm</label></span> 
+                    </div>
+                    <div class="input">
+                        <div id="first_name_msg"></div>
+                        <input type="text" name="first_name" id="first_name" required autocomplete="off">
+                        <div id="last_name_msg"></div>
+                        <input type="text" name="last_name" id="last_name" required autocomplete="off">
+                        <div id="email_msg"></div>
+                        <input type="text" name="email" id="email" required autocomplete="off">
+                        <div id="user_id_msg"></div>
+                        <input type="text" name="user_id" id="user_id" required autocomplete="off" placeholder="skillmemo.com/ your id /">
+                        <div id="password_msg"></div>
+                        <input type="password" name="password" id="password" required autocomplete="off">
+                        <input type="password" name="confirm" id="confirm" required autocomplete="off">
+                        
+                    </div>
+                    <button class="btn-blue btn-post" id="create">CREATE</button>            
+                    <div class="errors-wrap">
+                        {% for message in messages %}
+                        <div class="error_msg">
+                            {{message}}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+
+    </div>
+</body>
+</html>

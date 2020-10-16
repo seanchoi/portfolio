@@ -1,0 +1,9 @@
+{% if found == "short" %}
+    <div class="check_error"><i class="fas fa-times-circle"></i>too short</div>
+{% endif %}
+{% if found == False %}
+    <div class="check_success"><i class="fas fa-check"></i>available</div>
+{% endif %}
+{% if found == "required" %}
+<div class="check_error"><i class="fas fa-times-circle"></i>required</div>
+{% endif %}

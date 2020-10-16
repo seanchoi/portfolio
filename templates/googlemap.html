@@ -1,0 +1,134 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<div class="detail-wrap2">        
+    <div class="detail-tag2">About Project</div>
+    <div class="detail2">     
+        <div class="detail-title">&quotStarbucks Store Locator&quot</div>
+        <span class="detail-item"><i class="fas fa-bullseye"></i>Google Map API</span>
+        <span class="detail-item"><i class="fas fa-bullseye"></i>Location Data: Python & JSON</span>
+        <span class="detail-item"><i class="fas fa-bullseye"></i>Restful API</span>
+        <span class="detail-item"><i class="fas fa-bullseye"></i>Django Framework</span>            
+        <span class="detail-item"><i class="fas fa-bullseye"></i>Get Directions</span> 
+        <span class="detail-item"><i class="fas fa-bullseye"></i>Map Bounds according to Marker Number</span> 
+        <span class="detail-item"><i class="fas fa-bullseye"></i>Search by City or Zipcode</span>
+    </div>
+
+</div>
+
+<div class="logo"><img src="{% static 'img/sb_logo.png' %}"></div>
+<div class="search-container">
+    <div class="search">
+        <input id="zip-code-input" type="text" placeholder="city or zipcode" autofocus>
+        <i class="fas fa-search" onclick="searchStores()"></i> <!-- to use a font awesome icon, need to import  -->
+    </div>                
+</div>
+<div class="member-list-container"> <!-- understand container structure -->
+    <div class="member-list">                
+    </div>
+</div>        
+<div id="map" class="map"></div>
+
+<!-- data input form -->
+<div class="input-form-wrap">
+    <form action="/map/google/" method="POST">
+        {% csrf_token %}
+    <div class="form-container">
+        <table>
+            <tr>
+                <td>Store Name</td>
+                <td><input type="text" name="store_name"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input type="text" name="address"></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input type="text" name="city"></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td><input type="text" name="state"></td>
+            </tr>
+            <tr>
+                <td>Zipcode</td>
+                <td><input type="text" name="zipcode"></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td><input type="text" name="phone"></td>
+            </tr>
+            <tr>
+                <td>Latitude</td>
+                <td><input type="text" name="lat"></td>
+            </tr>
+            <tr>
+                <td>Longitude</td>
+                <td><input type="text" name="lon"></td>
+            </tr>
+        </table>
+        <div class="map-btn-wrap">
+            <button class="btn btn-sb">UPDATE</button>          
+        </div>
+    </div>
+    </form>
+</div>        
+{% endblock %}
+{% block script %}
+<link rel="stylesheet" href="{% static 'css/googlemap.css' %}">
+<script src="{% static 'js/index.js' %}"></script>
+<script>
+    // CREAING List & Markers 
+    function createMarker(latlng, lat, lon, name, stAddress, phone, index) {
+        //var nav = [stores.coordinates.latitude, stores.coordinates.longitude];
+        var html = `
+            <div class="member-info-window">
+                <div class="member-info-name">
+                    ${name}
+                </div>
+                <div class="member-info-status">
+                    Open • 5:30am - 8:30pm
+                </div>                
+                <div class="member-info-address">
+                    <div class="circle">
+                        <i class="fas fa-location-arrow"></i>
+                    </div>                         
+                        ${stAddress} </a>               
+                    </div>                    
+                <div class="member-info-phone">                  
+                    <div class="circle">
+                        <i class="fas fa-phone-alt"></i>    
+                    </div>
+                    <a class="link" href="tel:${phone}">${phone}</a>                
+                </div>
+                <div class="member-info-address">
+                    <div class="map">
+                        <i class="far fa-map"></i>
+                    </div>
+                    <a class="link" href="https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}">                        
+                    Get Directions </a>
+            </div>
+        `    
+        var pin = '{% static "img/sb_location.png" %}';
+        var iconBase = pin;   
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: iconBase,
+            position: latlng,                
+        });        
+        google.maps.event.addListener(marker, 'click', function() {
+            infoWindow.setContent(html);
+            infoWindow.open(map, marker);
+        });        
+        markers.push(marker); // push to var markers =[]; /making markers list (looping) 
+    }   
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy4Wewzs5NWEWUkFzQJxtxddhO6oAyaFE&callback=initMap">
+</script>
+<script src="{% static 'js/login_reg.js' %}"></script>
+{% endblock %}
+
+
+
