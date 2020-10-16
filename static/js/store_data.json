@@ -64,6 +64,22 @@
         ]
     },
     {
+        "store_name": "Kentlands",
+        "address": "121 Market Street",
+        "city": "Gaithersburg",
+        "state": "MD",
+        "zipcode": "20878",
+        "phone": "240.683.6931",
+        "coordinates": {
+            "lat": "39.122263",
+            "lon": "-77.235390"
+        },
+        "addressLines": [
+            "121 Market Street",
+            "Gaithersburg, MD 20878"
+        ]
+    },
+    {
         "store_name": "Mudy Branch",
         "address": "898 Muddy Branch Rd.",
         "city": "Gaithersburg",
@@ -77,6 +93,22 @@
         "addressLines": [
             "898 Muddy Branch Rd.",
             "Gaithersburg, MD 20878"
+        ]
+    },
+    {
+        "store_name": "Potomac Woods Plaza",
+        "address": "1087 Seven Locks Rd",
+        "city": "Rockville",
+        "state": "MD",
+        "zipcode": "20854",
+        "phone": "301.545.5194",
+        "coordinates": {
+            "lat": "39.061700",
+            "lon": "-77.159230"
+        },
+        "addressLines": [
+            "1087 Seven Locks Rd",
+            "Rockville, MD 20854"
         ]
     },
     {

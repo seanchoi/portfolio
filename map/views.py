@@ -16,9 +16,8 @@ def Map(request):
         phone = request.POST['phone']
         lat = request.POST['lat']
         lon = request.POST['lon']
-
         MapData.objects.create(store_name=store_name, address=address,city=city,state=state,zipcode=zipcode,phone=phone,lat=lat,lon=lon)
-
+        
         locations = MapData.objects.all().order_by('store_name')
         data = []
         for store in locations:
@@ -37,8 +36,8 @@ def Map(request):
         json_file = BASE_DIR / "static/js/store_data.json"
         with open(json_file, "w") as outfile:
             outfile.write(json_data)
-
-        return render(request, 'googlemap.html')
+            
+        return redirect('/map/google')
 
     else:
 
