@@ -25,6 +25,7 @@
             <div class="sub-title">Web Developer | Python Full Stack</div>
             <div class="sub-title">Rockville MD USA</div>            
             <button class="btn contact">CONTACT ME!</button>
+            <span>* min. viewport w: 1024px and up</span>
         </div>        
     </div>
     {% if user.user_id == logged_user.user_id %}
@@ -39,19 +40,139 @@
             <i class="fas fa-project-diagram"></i>
         </div>
         <div class="content-wrap">
-            <div class="title">PROJECTS</div>    
+            <div class="title"> FULL STACK PROJECTS</div>    
             <div class="content">
-                <div class="section section-left">
-                    <span>Login/ Registration</span>
-                    <span>Multiple Image Upload Model</span>
-                    <span>Starbucks Store Locator</span>
-                    <span>Solo Project: Skillmemo</span>
-                </div>
+                <a href="/register/">
+                    <div class="section section-left-project">
+                        <span>Login/ Registration(2020)</span>
+                        <img src="{% static 'img/login.png' %}">
+                    </div>
+                </a>
                 <div class="section">
-                    <span><a href="/register/">Front and Backend Validation</a></span>
-                    <span><a href="/multi/multiple_img/">Blog Post Model</a></span>
-                    <span><a href="/map/google/">Google Map API</a></span>
-                    <span><a href="">social media platform</a></span>
+                    <span>Python, Django</span>
+                    <span>JavaScript, Ajax</span>
+                    <span>Restfull API</span>
+                    <span>Front and Backend Validation</span>                    
+                    <span>Registration & Login</span>                                        
+                    <span>Mini Dashboard</span>
+                    <span>Update/Delete Profile Picture</span>                                        
+                    <span>SQLite, AWS</span>                                        
+                </div>
+            </div>
+            <div class="content">
+                <a href="/multi/multiple_img/">
+                <div class="section section-left-project">
+                    <span>Multiple Image Upload Model(2020)</span>
+                    <img src="{% static 'img/imageupload.png'%}">
+                </div>
+                </a>
+                <div class="section">
+                    <span>Python, Django</span>
+                    <span>JavaScript, jQuery, Ajax</span>
+                    <span>True Frontend Upload UX Model</a></span>                    
+                    <span>Limit Upto 4 Images</span>
+                    <span>Backend Process Upon Selection</span>
+                    <span>Selection Clear(Front, Backend)</span>
+                    <span>Upload/ Delete Blog Post</span>                    
+                    <span>SQLite or PostgreSQL, AWS</span>
+                    <span>ubuntu, gunicorn, nginx</span>
+                </div>
+            </div>
+            <div class="content">
+                <a href="/map/google/">
+                    <div class="section section-left-project">
+                        <span>Starbucks Store Locator(2020)</span>                    
+                        <img src="{% static 'img/sb_locator.png' %}">
+                    </div>
+                </a>
+                <div class="section">
+                    <span>Creative, Practical Project</span>
+                    <span>Python, Django</span>                    
+                    <span>Google Map API, JavaScript, JSON</span>                    
+                    <span>Store Location, Direction</span>
+                    <span>Store Data Entry Model</span>
+                    <span>Map Bounds</span>                    
+                    <span>Easy-to-Customize App</span>
+                    <span>SQLite, AWS</span>
+                </div>                
+            </div>
+            <div class="content">
+                <a href="">
+                    <div class="section section-left-project">
+                        <span>Solo Project: SkillMemo(2020)</span>                    
+                        <img src="{% static 'img/skillmemo.png' %}">
+                    </div>
+                </a>
+                <div class="section">
+                    <span>Python, Django</span>
+                    <span>JavaScript, jQuery, Ajax</span>
+                    <span>Restful API</span>
+                    <span>Social Media Platform</span>                    
+                    <span>User, Memo Search Function</span>
+                    <span>User Account Settings</span>
+                    <span>Saved Post Function</span>
+                    <span>UX, UI Design</span>
+                    <span>Code Note</span>
+                    <span>YouTube Video ID Picker</span>                    
+                    <span>Multiple Image Uploader</span>                    
+                    <span>Memo Privacy Setting</span>                    
+                    <span>DM function</span>
+                    <span>Memo Oranizing By Tab</span>                    
+                    <span>PostgreSQL or SQLite, AWS</span>
+                    <span>ubuntu, nginx, gunicorn</span>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="i-wrap">
+            <i class="fas fa-project-diagram"></i>
+        </div>
+        <div class="content-wrap">
+            <div class="title"> FRONTEND PROJECTS</div>    
+            <div class="content">
+                <a href="https://airbnb-21440.web.app">
+                    <div class="section section-left-project">
+                        <span>Airbnb Clone/ Date Picker (2020)</span>                    
+                        <img src="{% static 'img/airbnb.png' %}">
+                    </div>
+                </a>
+                <div class="section">                                        
+                    <span>REACT</span>
+                    <span>FIREBASE</span>
+                    <span>Search Dates Function</span>    
+                    <span>Search Result Page</span>
+                    <span>Full Responsive Design</span>
+                </div>
+            </div>
+
+            <div class="content">
+                <a href="https://www.wasingtonianlaw.com">
+                    <div class="section section-left-project">
+                        <span>WashingtonianLaw.com(2020)</span>                    
+                        <img src="{% static 'img/washingtonian.png' %}">
+                    </div>
+                </a>
+                <div class="section">                                                            
+                    <span>Wordpress Website</span>                    
+                    <span>DC Area Law Firm/ Agency</span>
+                    <span>Custom Website Design</span>
+                    <span>Custom Layer Slider</span>    
+                    <span>Custom Contact Form</span>                    
+                </div>
+            </div>
+            <div class="content">
+                <a href="https://www.iSimpleConnect.com">
+                    <div class="section section-left-project">
+                        <span>iSimpleConnect.com(2018)</span>                    
+                        <img src="{% static 'img/isimple.png' %}">
+                    </div>
+                </a>
+                <div class="section">                                                                
+                    <span>Wordpress Website</span>
+                    <span>Travel Insurance Agency</span>
+                    <span>Custom Website Design</span>                        
+                    <span>Custom Contact Form</span>                    
                 </div>
             </div>
         </div>
@@ -65,9 +186,9 @@
             <div class="title">SKILL SET</div>    
             <div class="content">
                 <div class="section section-left">
-                    <span>Languages</span>
+                    <span>LANGUAGES</span>
                     <!-- <span>Frameworks</span> -->
-                    <span>Tools</span>
+                    <span>TOOLS</span>
                 </div>
                 <div class="section">
                     <span>Python, JavaScript, HTML, CSS</span>
@@ -84,7 +205,7 @@
             </div>
         </div>
     </div>
-   
+
 </div>
 <div class="modal-background">
     <div class="dm-modal">

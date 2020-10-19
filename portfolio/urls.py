@@ -3,14 +3,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('index.urls')),
     path('', include('login.urls')),
     path('multi/', include('imageupload.urls')),
-    path('map/', include('map.urls'))
-
+    path('map/', include('map.urls')),
 ] 
 
 if settings.DEBUG:
