@@ -25,9 +25,11 @@ with open(BASE_DIR / 'secret.json') as f:
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['18.216.162.26']
+# SECRET_KEY = 'c4--qvpd2npg16fprmf3fd)z_(epx6hol5@kwc0+ka9dmi)=y)'
+
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -125,10 +127,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'static',
-# ]
+# STATIC_ROOT = BASE_DIR / 'static'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
