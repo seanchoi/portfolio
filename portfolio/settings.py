@@ -29,7 +29,7 @@ DEBUG = False
 
 # SECRET_KEY = 'c4--qvpd2npg16fprmf3fd)z_(epx6hol5@kwc0+ka9dmi)=y)'
 
-ALLOWED_HOSTS = ['18.216.162.26']
+ALLOWED_HOSTS = ['3.132.252.161']
 
 
 # Application definition
