@@ -3,4 +3,4 @@ __pycache__/
 .vscode/
 venv/
 db.sqlite3
-.secret.json
+secret.json
