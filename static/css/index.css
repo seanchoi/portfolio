@@ -11,13 +11,13 @@ a {
     font-weight: 500;    
 }
 .left {
-    width:20%;
+    width:10%;
     height: fit-content;
     position: relative;
     box-sizing: border-box;
 }
 .middle {
-    width:60%;
+    width:80%;
     height: fit-content;
     position: relative;
     box-sizing: border-box;
@@ -26,7 +26,7 @@ a {
     flex-direction: column;
 }
 .right {
-    width:20%;
+    width:10%;
     height: fit-content;
     position: relative;
     box-sizing: border-box;
@@ -123,11 +123,11 @@ a {
     text-decoration: none;
 }
 
-
 .content {
     margin-top:20px;
     display: flex;
     justify-content: center;
+    
 }
 .i-wrap {
     display: flex;
@@ -155,7 +155,7 @@ a {
 }
 
 .section {
-    width: 280px;
+    width: 100%;
     height:fit-content;
     display: inline-block;
     border-radius:15px;    
@@ -191,8 +191,9 @@ a {
     border-radius: 10px;
 }
 span{
+    font-size: 18px;
     display:block;
-    margin-bottom: 20px;
+    margin-bottom: 20px;    
 }
 
 .form-wrap {
@@ -532,4 +533,120 @@ input:focus {
     align-items: center;
     font-size:12px;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 500px) {
+    .left {
+        width:5%;
+    }
+    .right {
+        width:5%;
+    }
+    .middle {
+        width:90%;
+    }
+    .title {
+        font-size:20px;
+    }
+    .sub-title {
+        font-size:14px;
+    }
+    .contact {
+        padding: 10px 20px 10px 20px;
+    }
+    .container {
+        box-sizing: border-box;
+        padding:5px;
+    }
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .content > a {
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    .section {
+        width:100%;
+        margin:0;
+        padding:10px;
+    }
+    .section > span {
+        margin-bottom:10px;
+        font-size:12px;
+    }
+    .section-left-project {
+        width:100%;
+    }
+    .section-left-project > img {
+        width:200px;
+    }
+    #skillset {
+        position: absolute;
+        visibility: hidden;
+    }
+    .form-wrap {
+        font-size: 12px;
+    }
+    #create {
+        font-size:14px;
+        padding:15px;
+    }
+    .form-tbl {
+        margin:0;
+    }
+    input {
+        margin:5px;
+    }
+    .detail {
+        padding:15px;
+    }
+    .detail-title {
+        font-size:14px;
+    }
+    .detail > span {
+        font-size:12px;
+    }
+
+}
+
+@media only screen and (min-width: 501px) and (max-width:1023px) {
+    .left {
+        width:5%;
+    }
+    .right {
+        width:5%;
+    }
+    .middle {
+        width:90%;
+    }
+    .container {
+        box-sizing: border-box;
+        padding:5px;
+    }
+    .content {
+        justify-content: space-between;
+    }
+    .content > a {
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    .section {
+        width:100%;
+        margin:15px;
+        padding:10px;
+    }
+    .section > span {
+        margin-bottom:10px;
+        font-size:16px;
+    }
+    .section-left-project {
+        width:100%;
+        margin-right:10px;
+    }
+    .section-left-project > img {
+        width:250px;
+    }
 }
